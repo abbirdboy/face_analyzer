@@ -6,5 +6,7 @@ For  Web Interface Development/Run:
     3. Run 'conda env create -f environment.yml' in root directory
     4. Run 'source activate face_analyzer'
     5. 'cd web'
-    6. 'python run.py'
-    7. Flask Dev Server should be running
+    6. 'mkdir instance'
+    7. 'touch instance/config.py' [Add app secret key and other info, if needed]
+    8. 'python run.py'
+    9. Flask Dev Server should be running
