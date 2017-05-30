@@ -1,5 +1,7 @@
 from flask import Flask
 from . import views
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__, instance_relative_config=True)
 
@@ -12,5 +14,8 @@ app.config.from_pyfile('config.py')
 # Load the file specified by the APP_CONFIG_FILE environment variable
 # Variables defined here will override those in the default configuration
 # app.config.from_envvar('APP_CONFIG_FILE')
+
+# db setup
+db = SQLAlchemy(app)
 
 app.add_url_rule('/', view_func=views.home)

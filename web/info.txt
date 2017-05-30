@@ -1,2 +1,8 @@
 Directory Structure:
 http://exploreflask.com/en/latest/organizing.html
+
+
+Current work:
+    - Finish up models.py for setting up db for image upload
+        - file is located in web/app/models.py
+    - Create script for automatic db setup
