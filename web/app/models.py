@@ -23,14 +23,14 @@ class Face_Image(db.Model):
 
     analysis = db.relationship('Analysis', uselist=False, back_populates='face_images')
 
-    def __init__(self, upload_ip, upload_time=None, image_url, format, face_box_x=0.0, face_box_y=0.0, face_box_w=0.0, face_box_h=0.0):
+    def __init__(self, upload_ip, image_url, format, upload_time=None, face_box_x=0.0, face_box_y=0.0, face_box_w=0.0, face_box_h=0.0):
         self.upload_ip = upload_ip
         if upload_time is None:
             upload_time = datetime.utcnow()
         self.upload_time = upload_time
         self.image_url = image_url
         self.format = format
-        
+
         self.face_box_x = face_box_x
         self.face_box_y = face_box_y
         self.face_box_w = face_box_w
@@ -40,6 +40,8 @@ class Face_Image(db.Model):
 # AI analysis
 class Analysis(db.Model):
     __tablename__ = 'analysis'
+
+    id = db.Column(db.Integer, primary_key=True)
 
     type = db.Column(db.String(15)) # i.e. acne, emotion, gender
 

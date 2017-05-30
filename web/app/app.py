@@ -18,4 +18,7 @@ app.config.from_pyfile('config.py')
 # db setup
 db = SQLAlchemy(app)
 
+from .models import Face_Image, Analysis
+
+
 app.add_url_rule('/', view_func=views.home)

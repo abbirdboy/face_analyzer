@@ -2,6 +2,9 @@ Directory Structure:
 http://exploreflask.com/en/latest/organizing.html
 
 
+Database:
+https://realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
+
 Current work:
     - Finish up models.py for setting up db for image upload
         - file is located in web/app/models.py
