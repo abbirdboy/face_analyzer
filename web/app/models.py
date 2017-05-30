@@ -3,7 +3,7 @@ from datetime import datetime
 
 # each uploaded image
 class Face_Image(db.Model):
-    __tablename__ = 'face_images'
+    __tablename__ = 'face_image'
 
     id = db.Column(db.Integer, primary_key=True)
 
@@ -21,7 +21,7 @@ class Face_Image(db.Model):
     face_box_w = db.Column(db.Float)
     face_box_h = db.Column(db.Float)
 
-    analysis = db.relationship('Analysis', uselist=False, back_populates='face_images')
+    analysis = db.relationship('Analysis', uselist=False, back_populates='face_image')
 
     def __init__(self, upload_ip, image_url, format, upload_time=None, face_box_x=0.0, face_box_y=0.0, face_box_w=0.0, face_box_h=0.0):
         self.upload_ip = upload_ip
@@ -54,6 +54,10 @@ class Analysis(db.Model):
     grade_4 = db.Column(db.Float)
 
     model_id = db.Column(db.String(15))
+
+    face_image_id = db.Column(db.Integer, db.ForeignKey('face_image.id'))
+
+    face_image = db.relationship("Face_Image", back_populates="analysis")
 
     def __init__(self, type, grade_1=0.0, grade_2=0.0, grade_3=0.0, grade_4=0.0, user_grade=0.0, model_id=''):
         self.type = type
