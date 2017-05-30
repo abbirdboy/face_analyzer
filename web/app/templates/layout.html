@@ -18,7 +18,23 @@
   <body>
 
     <div class="site-wrapper">
-      {% block content %}{% endblock %}
+        <div class="site-wrapper-inner">
+            <div class="container">
+                <div class="masthead clearfix">
+                  <div class="container inner">
+                    <h3 class="masthead-brand">Face Analyzer</h3>
+                    <nav>
+                      <ul class="nav masthead-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Contact</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
     </div>
 
 
